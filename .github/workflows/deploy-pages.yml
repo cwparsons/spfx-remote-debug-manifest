@@ -27,9 +27,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          cache: 'npm'
+          # cache: 'npm'
 
-      - name: Create web part
+      - name: Create web part from Yeoman generator
         run: npx -p yo -p @microsoft/generator-sharepoint@1.15.2 --yes -- yo @microsoft/sharepoint --skip-install --solution-name="webpart" --component-type "webpart" --component-description "HelloWorld description" --component-name "HelloWorld" --framework "react" --package-manager "npm" --skip-feature-deployment
 
       - name: Install dependencies
