@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "spfx-remote-debug-manifest",
+    "libraryId": "0dff1db3-2134-45db-bc5a-aa773f1052e1",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spfx-remote-debug-manifest",
+    "solutionShortDescription": "spfx-remote-debug-manifest description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
