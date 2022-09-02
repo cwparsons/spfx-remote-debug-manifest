@@ -43,7 +43,7 @@ jobs:
       - name: Copy webpart artifacts
         run: |
           mkdir artifacts
-          cp README.md artifacts
+          cp webpart/README.md artifacts
           cp -r webpart/dist artifacts/dist
           cp -r webpart/dist artifacts/lib
           cp -r webpart/temp artifacts/temp
