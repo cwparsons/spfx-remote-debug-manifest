@@ -29,19 +29,24 @@ jobs:
           node-version: '16'
           cache: 'npm'
 
+      - name: Create web part
+        run: npx -p yo -p @microsoft/generator-sharepoint@1.15.2 --yes -- yo @microsoft/sharepoint --skip-install --solution-name="webpart" --component-type "webpart" --component-description "HelloWorld description" --component-name "HelloWorld" --framework "react" --package-manager "npm" --skip-feature-deployment
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+        working-directory: webpart
 
       - name: Run bundle
         run: npm run build
+        working-directory: webpart
       
-      - name: Copy artifacts
+      - name: Copy webpart artifacts
         run: |
           mkdir artifacts
           cp README.md artifacts
-          cp -r dist artifacts/dist
-          cp -r dist artifacts/lib
-          cp -r temp artifacts/temp
+          cp -r webpart/dist artifacts/dist
+          cp -r webpart/dist artifacts/lib
+          cp -r webpart/temp artifacts/temp
 
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
