@@ -34,14 +34,6 @@ jobs:
 
       - name: Run bundle
         run: npm run build
-
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: "https://localhost:4321/"
-          replace: "https://cwparsons.ca/${{ github.event.repository.name }}"
-          regex: false
-          include: temp/**/*
       
       - name: Copy artifacts
         run: |
@@ -50,6 +42,14 @@ jobs:
           cp -r dist artifacts/dist
           cp -r dist artifacts/lib
           cp -r temp artifacts/temp
+
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: 'https://localhost:4321/dist/'
+          replace: 'https://cwparsons.ca/${{ github.event.repository.name }}/dist/'
+          regex: false
+          include: 'artifacts/**'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
