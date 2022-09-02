@@ -2,13 +2,16 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Load this web part remotely by adding the following query string to the end of
+your SharePoint page URL:
 
-[picture of the solution in action, if possible]
+```text
+?debug=true&noredir=true&debugManifestsFile=https://cwparsons.ca/spfx-remote-debug-manifest/temp/manifests.js
+```
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.15.2-green.svg)
 
 ## Applies to
 
